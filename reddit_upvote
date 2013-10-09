@@ -1,0 +1,14 @@
+from splinter import Browser
+from time import time
+
+def upvote(url,username,paswd):
+    br = Browser()
+    br.visit(url)
+    br.find_by_css("DIV.arrow.up.login-required")[0].click()
+    br.find_by_id("user_login").fill(username)
+    br.find_by_id("passwd_login").fill(paswd)
+    br.find_by_css("button")[2].click()
+    t = time()
+    while time()-t<5:
+        pass
+    br.find_by_css("DIV.arrow.up.login-required")[0].click()
