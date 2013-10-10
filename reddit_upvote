@@ -13,3 +13,7 @@ def upvote(url,n):
         while time()-t<5:
             pass
         br.find_by_css("DIV.arrow.up.login-required")[0].click()
+        t = time()
+        while time()-t<1:
+            pass
+        br.quit()
